@@ -1,0 +1,13 @@
+from tkinter import  *
+root=Tk()
+root.title(" YOUTUBE IND ")
+root.geometry("500x450")
+frame_f1=Frame(root,bg="red",borderwidth=7,relief=SUNKEN)
+frame_f1.pack(side=LEFT,fill="y")
+frame_f2=Frame(root,bg="black",borderwidth=5,relief=SUNKEN)
+frame_f2.pack(side=TOP,fill="x")
+label_l1=Label(frame_f1,text=" YOUTUBE IND ",bg="white")
+label_l1.pack(pady=20)
+label_l2=Label(frame_f2,text=" SEARCH ", bg="white")
+label_l2.pack(padx=20)
+root.mainloop()
