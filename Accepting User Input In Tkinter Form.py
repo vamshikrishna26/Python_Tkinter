@@ -1,0 +1,27 @@
+from tkinter import *
+root=Tk()
+root.title("TSRTC Booking centre ")
+root.geometry("500x400")
+def get_vals():
+    print("submitting")
+    print(f"{user_name.get(),phno_name.get(),age_name.get(),gender_name.get(),meals_name.get()}")
+    with open("mylist.txt","a") as f:
+        f.write(f"{user_name.get(),phno_name.get(),age_name.get(),gender_name.get(),meals_name.get()}\n")
+
+Label(text=" WELCOME TO TSRTC BOOKING CENTRE",font=("comicsansms",11,"bold"),bg="red",fg="yellow",relief=SUNKEN).grid(row=0,column=3)
+Label(text="Name",font=("comicsansms",11,"bold"),pady=7).grid(row=1,column=3)
+Label(text="Ph.no",font=("comicsansms",11,"bold"),pady=7).grid(row=2,column=3)
+Label(text="Age",font=("comicsansms",11,"bold"),pady=7).grid(row=3,column=3)
+Label(text="Gender",font=("comicsansms",11,"bold"),pady=7).grid(row=4,column=3)
+user_name=StringVar()
+phno_name=StringVar()
+age_name=StringVar()
+gender_name=StringVar()
+meals_name=IntVar()
+Entry(root,textvariable=user_name,relief=SUNKEN).grid(row=1,column=5)
+Entry(root,textvariable=phno_name,relief=SUNKEN).grid(row=2,column=5)
+Entry(root,textvariable=age_name,relief=SUNKEN).grid(row=3,column=5)
+Entry(root,textvariable=gender_name,relief=SUNKEN).grid(row=4,column=5)
+Checkbutton(text="do you want meals ? ",variable=meals_name).grid(row=5,column=5)
+Button(text="Submit",command=get_vals,bg="black",fg="white",font=("comicsansms",7,"bold"),relief=SUNKEN).grid(row=6,column=5)
+root.mainloop()
